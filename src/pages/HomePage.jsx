@@ -17,10 +17,27 @@ function HomePage() {
 
     return (
         <div id="project-list">
-            {projectList.map((projectData, key) => {
-             return <ProjectCard key={key} projectData={projectData}/>;
-            })}
+          {projectList.map((projectData) => {
+            return (
+              <ProjectCard
+                key={`project-${projectData.id}`}
+                projectData={projectData}
+              />
+            );
+          })}
         </div>
-    );
-}
+      );
+    }
+
+
+//     return (
+//         <div id="project-list">
+//             {projectList.map((projectData, key) => {
+//              return (
+//              <ProjectCard 
+//              key={key} projectData={projectData}/>;
+//             })}
+//         </div>
+//     );
+// }
 export default HomePage;

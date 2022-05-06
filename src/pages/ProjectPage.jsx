@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 function ProjectPage() {
   // State
-  const [projectData, setProjectData] = useState();
+  const [projectData, setProjectData] = useState({ pledges:[] });
 
   // Hooks
   const { id } = useParams();
@@ -28,14 +28,17 @@ function ProjectPage() {
   return (
     <>
       <h2>{projectData.title}</h2>
+      <img src={projectData.image} alt="the project"/>
+      <div className="description">{projectData.description}</div>
       <h3>Created at: {projectData.date_created}</h3>
+      <div>Goal: ${projectData.goal}</div>
       <h3>{`Status: ${projectData.is_open}`}</h3>
       <h3>Pledges:</h3>
       <ul>
         {projectData.pledges.map((pledgeData, key) => {
           return (
             <li>
-              {pledgeData.amount} from {pledgeData.supporter}
+              ${pledgeData.amount} from {pledgeData.supporter}
             </li>
           );
         })}
