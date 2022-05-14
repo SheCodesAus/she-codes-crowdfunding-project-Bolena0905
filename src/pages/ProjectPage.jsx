@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./ProjectPage.css";
 
 function ProjectPage() {
   // State
@@ -28,7 +29,7 @@ function ProjectPage() {
   return (
     <>
       <h2>{projectData.title}</h2>
-      <img src={projectData.image} alt="the project"/>
+      <img className="img-project"src={projectData.image} alt="the project"/>
       <div className="description">{projectData.description}</div>
       <h3>Created at: {projectData.date_created}</h3>
       <div>Goal: ${projectData.goal}</div>
